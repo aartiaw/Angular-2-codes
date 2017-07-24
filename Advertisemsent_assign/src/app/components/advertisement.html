@@ -1,0 +1,14 @@
+<div class="form-group">
+    Enter product title: <input #adTitle type='text'><br><br>
+    Enter your name: <input #adName type='text' [value] = name><br><br>
+    Enter product description: <input #adDescription type='text'><br><br>
+
+    Select Category: <select #cat>
+    <option *ngFor="let category of category">
+    {{category}}</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Add New Ad" (click)="getDetails(adTitle.value,adName.value,adDescription.value,cat.value)">
+    </div>

@@ -1,0 +1,26 @@
+<table border="1">
+    <tr>
+        <td colspan="5"><input #searchBox type="text" placeholder="search by name/title" (keyup)="0" [ngStyle]="{'width':'500px'}">
+        </td>
+    </tr>
+    
+    <tr>
+    <th>Ad Title</th>
+    <th>Posted By</th>
+    <th>Ad Description</th>
+    <th>Category</th>
+    <th>Options</th>
+    </tr>
+
+    <tr *ngFor="let obj of newAdList|search:searchBox.value">
+
+    <td>{{obj.title}}</td>
+    <td>{{obj.name}}</td>
+    <td>{{obj.description}}</td>
+    <td>{{obj.mycat}}</td>
+
+    <td><input type="button" value="Edit Ad" (click)="editAd()">
+    <input type="button" value="Delete Ad" (click)="deleteAd(obj)">
+    </td>
+    </tr>
+</table>
